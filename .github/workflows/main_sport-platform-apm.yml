@@ -23,7 +23,7 @@ jobs:
       with:
         java-version: '8'
 
-    - name: 'Build with Gradle'
+
      - task: Gradle@2
        inputs:
          - task: 'build'
