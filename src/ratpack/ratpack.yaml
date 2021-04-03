@@ -1,0 +1,11 @@
+db:
+  neo4Url: bolt://localhost:7687
+  username: neo4j
+  password : August01August
+  driver_class_name:  org.neo4j.ogm.drivers.bolt.driver.BoltDriver
+mysql:
+  username: tes
+  password: test
+  url: localhost
+  port: 3306
+  schema: sportsplatform
