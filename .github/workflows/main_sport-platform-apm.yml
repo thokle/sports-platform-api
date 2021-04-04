@@ -24,10 +24,10 @@ jobs:
           java-version: '8'
 
       - name: Build with Gradle
-        task: Gradle@2
+      - task: Gradle@2
         inputs:
           gradleWrapperFile: 'gradlew'
-          task 'clean jar'
+          task: 'clean jar'
 
       - name: Run Azure webapp deploy action using publish profile credentials
         uses: azure/webapps-deploy@v2
