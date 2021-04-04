@@ -32,5 +32,5 @@ jobs:
           app-name: sport-platform-apm
           slot-name: Production
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9730D81A480C4C8FAE01EAED22F1CD5C }}
-          package: /build/libs/*.jar
+          package: ../build/libs/*.jar
 
