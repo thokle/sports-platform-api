@@ -24,7 +24,10 @@ jobs:
           java-version: '8'
 
       - name: Build with Gradle
-        run: gradle build
+        task: Gradle@2
+        inputs:
+          gradleWrapperFile: 'gradlew'
+          task 'clean jar'
 
       - name: Run Azure webapp deploy action using publish profile credentials
         uses: azure/webapps-deploy@v2
@@ -32,5 +35,5 @@ jobs:
           app-name: sport-platform-apm
           slot-name: Production
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9730D81A480C4C8FAE01EAED22F1CD5C }}
-          package: sports-platform-api/build/libs/*.jar
+          package:  ${github.workspace}/build/libs/*.jar
 
