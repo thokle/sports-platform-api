@@ -24,8 +24,9 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew jar
-      - name: create dir
-        run: mkdir -p ${{ github.workspace }}/jar
+      - run: |
+          mkdir -p ${{ github.workspace }}/config
+          mv ${{ steps.write_file.outputs.filePath }} ${{ github.workspace }}/config/
 
       -name: copy jar
         run: cp ${{github.workspace}}/build/libs/sports-platform-api-1.0.1.jar ${{ github.workspace }}/jar/sports-platform-api.1.0.1.jar
