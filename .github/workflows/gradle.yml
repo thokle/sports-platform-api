@@ -29,7 +29,11 @@ jobs:
       - name: copy
         run: cp -p ${{github.workspace}}/build/libs/sports-platform-api-1.0.1.jar ${{ github.workspace }}/config/sports-platform-api-1.0.1.jar
 
-
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+          with:
+            name: sports-platform-api
+            path: ${{ github.workspace }}/config/sports-platform-api-1.0.1.jar
 
 
   deploy:
