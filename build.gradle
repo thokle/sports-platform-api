@@ -23,6 +23,9 @@ repositories {
     mavenLocal()
 
 }
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
 
 dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.16'
