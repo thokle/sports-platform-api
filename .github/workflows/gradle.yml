@@ -27,7 +27,7 @@ jobs:
       - name: create dir
         run: mkdir -p ${{ github.workspace }}/config
       - name: copy
-        run: cp -p ${{github.workspace}}/build/libs/ ${{ github.workspace }}/config
+        run: cp -p ${{github.workspace}}/build/libs/sports-platform-api-1.0.1.jar ${{ github.workspace }}/config/sports-platform-api-1.0.1.jar
 
 
 
