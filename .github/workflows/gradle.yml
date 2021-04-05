@@ -24,10 +24,15 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew jar
+      - name: create dir
+        run: mkdir -p ${{ github.workspace }}/jar
 
+      -name: copy jar
+        run: cp ${{github.workspace}}/build/libs/sports-platform-api-1.0.1.jar ${{ github.workspace }}/jar/sports-platform-api.1.0.1.jar
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
+        path: ${{ github.workspace }}/jar/spors-platform-api.jar
 
 
   deploy:
