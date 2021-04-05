@@ -25,6 +25,17 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
+      - uses: actions/checkout@v2
+
+      - run: mkdir -p artifact/
+
+      - run: echo hello > path/to/artifact/world.txt
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sports-platform-api
+          path:  artifact/sports-platform-api.jar
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
