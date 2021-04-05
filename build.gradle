@@ -57,4 +57,13 @@ dependencies {
     runtime 'org.apache.logging.log4j:log4j-core:2.0.2'
 }
 
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.kleist.sportsportal.StartSportsPortal'
+        )
+    }
+}
+
 mainClassName = "com.kleist.sportsportal.StartSportsPortal"
