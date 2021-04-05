@@ -26,7 +26,8 @@ jobs:
         run: ./gradlew jar
       - name: create dir
         run: mkdir -p ${{ github.workspace }}/config
-      - name: cp -p ${{github.workspace}}/build/libs/ ${{ github.workspace }}/config
+      - name: copy
+        run: cp -p ${{github.workspace}}/build/libs/ ${{ github.workspace }}/config
 
 
 
