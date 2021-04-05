@@ -43,7 +43,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'sports-platform-api'
-          slot-name: 'production'
+          slot-name: 'dev'
           publish-profile: \${{ secrets.AzureAppService_PublishProfile_1234 }}
           package: '*.jar'
 
