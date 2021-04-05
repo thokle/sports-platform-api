@@ -23,11 +23,21 @@ jobs:
         with:
           java-version: '8'
 
-      - name: Build with Gradle
+    pool:
+      { { pool } }
+
+
       - task: Gradle@2
         inputs:
+          workingDirectory: ''
           gradleWrapperFile: 'gradlew'
-          task: 'clean jar'
+          gradleOptions: '-Xmx3072m'
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: '1.8'
+          jdkArchitectureOption: 'x64'
+          publishJUnitResults: true
+          testResultsFiles: '**/TEST-*.xml'
+          tasks: 'build'
 
       - name: Run Azure webapp deploy action using publish profile credentials
         uses: azure/webapps-deploy@v2
